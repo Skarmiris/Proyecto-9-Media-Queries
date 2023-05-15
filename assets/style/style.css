@@ -1,0 +1,342 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.grid-container {
+    display: grid;
+    width: auto;
+    height: 100vh;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+    "h"
+    "b"
+    "m"
+    "f";
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 2fr 7fr;
+        grid-template-areas:
+        "h h h h h h"
+        "b m m m m m"
+        "b m m m m m"
+        "f f f f f f"
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 2fr 7fr;
+        grid-template-areas:
+        "h h h h h h"
+        "b m m m m m"
+        "b m m m m m"
+        "f f f f f f"
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "h b b b b"
+        "h m m m m"
+        "h m m m m"
+        "f m m m m";
+    }
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+    /*las 4 secciones principales  grilla*/
+.header {
+    grid-area: h;
+    background-color: rgb(196,23,50);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+}
+
+.busqueda {   /*seccion de filtros de busqueda  grilla*/
+    grid-area: b;
+    background-color: rgb(94, 94, 94);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+}
+
+.main {   /*seccion principal  grilla*/
+    grid-area: m;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);
+    margin: 15px; 
+    overflow: auto; 
+
+}
+
+.footer {   /*pie de pagina grilla*/
+    grid-area: f;
+    background-color: rgb(99,18,27);
+    color: rgb(255, 255, 255);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+nav { 
+    display: flex;
+    justify-content: space-between;
+}
+
+/*header caja de img y titulo juntos*/
+.img-titulo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+   /*img hamburguesa*/
+   .img-hamburguesa {
+    padding: 10px;
+}
+
+@media (min-width: 576px) {
+    .img-hamburguesa { 
+        display: none
+    }
+}
+
+/*lista del header */
+ul {
+    padding: 0px;
+    list-style: none;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+ul li {
+    padding: 5px;
+    width: 60%;
+
+}
+
+.nav-li {
+    padding: 0 15px;
+}
+
+.caja-ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 0px;
+}
+
+@media (min-width: 576px) {
+    ul {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    ul .caja-ul{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+                    /*filtrar por busquedad*/
+.busqueda p {
+    margin: 0;
+}
+
+/*------dentro de busqueda el div que tiene el titulo y la barra blanca-------*/
+.filtro-p {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 0px;
+
+
+}
+
+/*dentro de seccion, busqueda la linea blanca */
+.precio {
+    width: 97%;
+    padding: 3px;
+    
+}
+   /*------------solo tiene las cards donde esta alojada la grilla-------------*/
+.main-cards {    /*padre de las cards*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: auto;
+    height: 100%;
+    overflow: auto; 
+}
+
+/*----------PAGINADO----------*/
+.paginado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.paginado a:hover {
+    background-color: rgb(196,23,50); 
+    color: #072225;
+}
+
+.paginado a {
+    width: 100%;
+    height: 15px;
+    border-radius: 8%;
+    line-height: 15px;
+    border: 2px solid #dadadaec;
+    background-color: rgb(255, 255, 255);
+    color: #0d2f33;
+    padding: 10px;
+    margin: 0px;
+    font-size: 1.4em; 
+    font-weight: 700; 
+    transition: .2s; 
+    text-decoration: none; 
+    text-align:center
+}
+
+   /*tamaño de cards segun la pantalla nada que ver con las cards en si*/
+@media (min-width: 576px) {
+    .main-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (min-width: 762px) {
+    .main-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+.main-cards .cards {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/*----------de aqui en adelante son cards----------*/
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between; 
+    margin: 10px;
+    border: 2px solid #bdbcbcec; 
+    border-radius: 5px;
+    width: auto; 
+    height: 100%; 
+}
+
+.card-img { 
+    width: auto;
+    height: 80%;
+}
+
+    /*img card*/
+.imagen { 
+    border: 2px solid #494949ec; 
+    width: 100%; 
+    height: 38vh; 
+    border-style: none;
+}
+
+.texto-card h2 { 
+    padding: 0px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.2em;
+}
+    /*--------BOTON--------*/
+.boton { 
+    transition: all 400ms ease;  
+    border: 1px solid #bebebe; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    height: 12%;
+    padding: 0;
+}
+
+button {
+    border: none; 
+    color: rgb(255, 255, 255);
+    height: 2.5vw;
+    width: 45%; 
+    padding: 0px;
+    font-size: 15px; 
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.226);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    background-color: #3f0d12;
+    background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+    
+
+}
+
+button:hover {
+    transition: all 500ms ease;
+    transform: translatey(-2%);
+    background-color: #c44f5b;
+    background-image: linear-gradient(315deg, #b34f59 0%, #da2943 74%);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+}
