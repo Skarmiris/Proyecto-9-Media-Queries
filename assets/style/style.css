@@ -100,7 +100,10 @@ h1 {
 
 nav { 
     display: flex;
+    border: 1px solid #0f0f0f00;
     justify-content: space-between;
+    /*flex-direction: column;*/
+    /* align-items: center; */
 }
 
 /*header caja de img y titulo juntos*/
@@ -120,57 +123,56 @@ nav {
     }
 }
 
-/*lista del header */
-ul {
-    padding: 0px;
+/*todo---------lista del header en nav------------*/
+.nav-ul {
+    background-color: #07222500;
+    display: flex;
+}
+
+.ul {
+    display: flex;
+    background-color: #39ebff00;
     list-style: none;
+}
+
+.li {
+    margin: 0px;
     color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    
-
 }
 
-ul li {
-    padding: 5px;
-    width: 60%;
-
+.ul .li {
+    padding: 10px 20px;
+    background-color: #39ebff00;
 }
 
-.nav-li {
-    padding: 0 15px;
-}
-
-.caja-ul {
-    display: flex;
-    flex-direction: column;
-    margin: 0px 20px;
-    padding: 0px;
+@media screen and (max-width: 575px) {
+    .nav-ul .ul {
+        display: none;
+    }
 }
 
 @media (min-width: 576px) {
-    ul {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 50%;
+    .nav-ul .ul {
+        height: auto;
+        width: auto;
     }
 }
 
 @media (min-width: 768px) {
-    ul .caja-ul{
-        flex-direction: row;
-        justify-content: space-around;
-        width: 50%;
+    .nav-ul .ul {
+        height: auto;
+        width: auto;
     }
 }
 
 @media (min-width: 992px) {
-    ul {
+    .nav-ul .ul{
         display: flex;
         flex-direction: column;
+        padding: 10px;
     }
 }
-
+/*todo------termina la lista del header*/
 
                     /*filtrar por busquedad*/
 .busqueda p {
